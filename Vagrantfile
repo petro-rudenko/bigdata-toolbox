@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 2181, host: 2181, host_ip: "127.0.0.1", auto_correct: true #Zookeeper
+  config.vm.network :forwarded_port, guest: 3030, host: 3030, host_ip: "127.0.0.1", auto_correct: true #Spark
   config.vm.network :forwarded_port, guest: 8020, host: 8020, host_ip: "127.0.0.1", auto_correct: true #HDFS NN
   config.vm.network :forwarded_port, guest: 8080, host: 8080, host_ip: "127.0.0.1", auto_correct: true #Ambari UI
   config.vm.network :forwarded_port, guest: 8081, host: 8081, host_ip: "127.0.0.1", auto_correct: true #Storm UI
