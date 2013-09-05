@@ -18,7 +18,7 @@ Stream processing tools:
 - [ ] Strom on yarn **TODO**
 
 Interactive query tools:
-- [ ] Spark (0.7.3) **TODO**
+- [x] Spark (0.8.0) (Need to verify Yarn deployment)
 - [ ] Tez **TODO**
 
 Nosql:
