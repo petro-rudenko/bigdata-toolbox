@@ -10,7 +10,8 @@ Hadoop [HDP2 stack](http://hortonworks.com/products/hdp/hdp2/):
 - [x] Hive/Hcatalog (0.11.0)
 - [x] Oozie (4.0)
 - [x] Hbase (0.95.2)
-- [x] Zookeeper(3.4.5)
+- [x] Zookeeper (3.4.5)
+- [x] Hue (2.2.0)
 - [x] Ambari (1.4.0)
 
 Stream processing tools: 

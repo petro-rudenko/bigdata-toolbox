@@ -22,13 +22,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 2181, host: 2181, host_ip: "127.0.0.1", auto_correct: true #Zookeeper
   config.vm.network :forwarded_port, guest: 3030, host: 3030, host_ip: "127.0.0.1", auto_correct: true #Spark
+  config.vm.network :forwarded_port, guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true #Hue
   config.vm.network :forwarded_port, guest: 8020, host: 8020, host_ip: "127.0.0.1", auto_correct: true #HDFS NN
   config.vm.network :forwarded_port, guest: 8080, host: 8080, host_ip: "127.0.0.1", auto_correct: true #Ambari UI
   config.vm.network :forwarded_port, guest: 8081, host: 8081, host_ip: "127.0.0.1", auto_correct: true #Storm UI
   config.vm.network :forwarded_port, guest: 8088, host: 8088, host_ip: "127.0.0.1", auto_correct: true #Resource manager UI
   config.vm.network :forwarded_port, guest: 10000, host: 10000, host_ip: "127.0.0.1", auto_correct: true #Hiveserver2
   config.vm.network :forwarded_port, guest: 11000, host: 11000, host_ip: "127.0.0.1", auto_correct: true #Oozie UI
-  
+  config.vm.network :forwarded_port, guest: 50070, host: 50070, host_ip: "127.0.0.1", auto_correct: true #WebHdfs
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
