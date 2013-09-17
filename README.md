@@ -25,7 +25,7 @@ Interactive query tools:
 Nosql:
 - [ ] Cassandra **TODO**
 - [ ] GraphDB: Aurelius (or Neo4J) **TODO**
-
+- [x] Accumulo (1.5.0)
 
 ## How to install:
 * Install latest [Vagrant](http://www.vagrantup.com/)

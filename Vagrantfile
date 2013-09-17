@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 10000, host: 10000, host_ip: "127.0.0.1", auto_correct: true #Hiveserver2
   config.vm.network :forwarded_port, guest: 11000, host: 11000, host_ip: "127.0.0.1", auto_correct: true #Oozie UI
   config.vm.network :forwarded_port, guest: 50070, host: 50070, host_ip: "127.0.0.1", auto_correct: true #WebHdfs
-
+  config.vm.network :forwarded_port, guest: 50095, host: 50095, host_ip: "127.0.0.1", auto_correct: true #Accumulo
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network :private_network, ip: "192.168.33.10"
