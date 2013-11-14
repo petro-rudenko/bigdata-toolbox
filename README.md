@@ -5,21 +5,21 @@ Vagrant VM with preinstalled [HDP2 Stack](http://hortonworks.com/products/hdp/hd
 ## What's inside:
 
 Hadoop [HDP2 stack](http://hortonworks.com/products/hdp/hdp2/):
-- [x] Hadoop (HDFS, YARN, MapReduce2) 2.1.0
-- [x] Pig (0.11.1)
-- [x] Hive/Hcatalog (0.11.0)
+- [x] Hadoop (HDFS, YARN, MapReduce2) 2.2.0
+- [x] Pig (0.12)
+- [x] Hive/Hcatalog (0.12)
 - [x] Oozie (4.0)
-- [x] Hbase (0.95.2)
+- [x] Hbase (0.96)
 - [x] Zookeeper (3.4.5)
-- [x] Hue (2.2.0)
-- [x] Ambari (1.4.0)
+- [x] Hue (2.3.0)
+- [x] Ambari (1.4.1)
 
 Stream processing tools: 
 - [x] Strom (0.8.2)
 - [ ] Strom on yarn **TODO**
 
 Interactive query tools:
-- [x] Spark (0.8.0) (Need to verify Yarn deployment)
+- [x] Spark (0.8.0) (*Spark was compiled with SPARK_HADOOP_VERSION=2.0.5-alpha. It's incompatible with hadoop2.2.0 installed on toolbox* See https://github.com/apache/incubator-spark/pull/141)
 - [ ] Tez **TODO**
 
 Nosql:

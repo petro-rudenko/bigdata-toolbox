@@ -10,11 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "bdata-toolbox"
+  config.vm.box = "bdata-toolbox-2.2.0"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://dev2.hortonworks.com.s3.amazonaws.com/stuff/sandbox-hdp-2.0.5-rc6.box"
+  config.vm.box_url = "http://dev2.hortonworks.com.s3.amazonaws.com/stuff/sandbox-hdp-2.0.6-rc7.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -26,7 +26,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8020, host: 8020, host_ip: "127.0.0.1", auto_correct: true #HDFS NN
   config.vm.network :forwarded_port, guest: 8080, host: 8080, host_ip: "127.0.0.1", auto_correct: true #Ambari UI
   config.vm.network :forwarded_port, guest: 8081, host: 8081, host_ip: "127.0.0.1", auto_correct: true #Storm UI
+  config.vm.network :forwarded_port, guest: 8082, host: 8082, host_ip: "127.0.0.1", auto_correct: true #Spark worker UI
   config.vm.network :forwarded_port, guest: 8088, host: 8088, host_ip: "127.0.0.1", auto_correct: true #Resource manager UI
+  config.vm.network :forwarded_port, guest: 18080, host: 18080, host_ip: "127.0.0.1", auto_correct: true #Spark UI
   config.vm.network :forwarded_port, guest: 10000, host: 10000, host_ip: "127.0.0.1", auto_correct: true #Hiveserver2
   config.vm.network :forwarded_port, guest: 11000, host: 11000, host_ip: "127.0.0.1", auto_correct: true #Oozie UI
   config.vm.network :forwarded_port, guest: 50070, host: 50070, host_ip: "127.0.0.1", auto_correct: true #WebHdfs

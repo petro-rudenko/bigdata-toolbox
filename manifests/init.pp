@@ -22,7 +22,7 @@ class prepare {
 
   line { java_home:
        file => "/etc/bashrc",
-       line => 'export JAVA_HOME=/usr/jdk/jdk1.6.0_31/',
+       line => 'export JAVA_HOME=/usr/jdk64/jdk1.6.0_31/',
    }
 
    line { java_path:
@@ -32,7 +32,7 @@ class prepare {
    }
 
    exec { "add_java_to_alternatives":
-     command => "alternatives --install /usr/bin/java java /usr/jdk/jdk1.6.0_31/bin/java 1 && alternatives --set java /usr/jdk/jdk1.6.0_31/bin/java"
+     command => "alternatives --install /usr/bin/java java /usr/jdk64/jdk1.6.0_31/bin/java 1 && alternatives --set java /usr/jdk64/jdk1.6.0_31/bin/java"
    }
    
 }
