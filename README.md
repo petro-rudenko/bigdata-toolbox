@@ -15,11 +15,11 @@ Hadoop [HDP2 stack](http://hortonworks.com/products/hdp/hdp2/):
 - [x] Ambari (1.4.1)
 
 Stream processing tools: 
-- [x] Strom (0.8.2)
+- [x] Strom (0.9.0)
 - [ ] Strom on yarn **TODO**
 
 Interactive query tools:
-- [x] Spark (0.8.0) (*Spark was compiled with SPARK_HADOOP_VERSION=2.0.5-alpha. It's incompatible with hadoop2.2.0 installed on toolbox* See https://github.com/apache/incubator-spark/pull/141)
+- [x] Spark (0.8.1) 
 - [ ] Tez **TODO**
 
 Nosql:

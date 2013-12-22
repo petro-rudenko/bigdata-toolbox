@@ -41,4 +41,4 @@ include prepare
 include hdp
 include storm
 include spark
-include accumulo
+#include accumulo

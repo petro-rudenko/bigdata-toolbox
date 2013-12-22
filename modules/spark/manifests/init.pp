@@ -11,7 +11,7 @@ class spark {
   }
 
   exec {"install_spark":
-    command => "yum install -y http://dev2.hortonworks.com.s3.amazonaws.com/stuff/rpms/spark-0.8.0-1.el6.noarch.rpm",
+    command => "yum install -y http://dev2.hortonworks.com.s3.amazonaws.com/stuff/spark/spark-0.8.1-1.el6.noarch.rpm http://dev2.hortonworks.com.s3.amazonaws.com/stuff/spark/spark-master-0.8.1-1.el6.noarch.rpm http://dev2.hortonworks.com.s3.amazonaws.com/stuff/spark/spark-worker-0.8.1-1.el6.noarch.rpm",
     unless => "ls /usr/lib/spark",
     require => Package["bigtop-utils"],
     timeout => 0
