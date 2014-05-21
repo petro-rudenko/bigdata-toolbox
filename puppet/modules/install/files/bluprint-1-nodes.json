@@ -1,0 +1,165 @@
+{
+    "configurations" : [
+        {
+            "global" : {
+                "nodemanager_heapsize" : "250",
+                "apptimelineserver_heapsize" : "250",
+                "resourcemanager_heapsize" : "250",
+                "yarn_heapsize" : "250",
+                "dtnode_heapsize" : "250",
+                "hadoop_heapsize" : "250",
+                "namenode_heapsize" : "250",
+                "hive_ambari_database": "MySQL",
+                "hive_database" : "New MySQL Database",
+                "hive_database_type" : "mysql",
+                "hive_hostname" : "sandbox.hortonworks.com",
+                "hive_metastore_user_passwd" : "hive",
+                "hbase_master_heapsize": "250",
+                "hbase_regionserver_heapsize": "250",
+                "namenode_opt_newsize": "50",
+                "namenode_opt_maxnewsize": "100",
+                "nagios_contact" : "admin@localhost.localdomain",
+                "nagios_web_login" : "nagiosadmin",
+                "nagios_web_password" : "admin",
+                "oozie_metastore_user_passwd" : "oozie"
+            }
+        },
+        {
+            "core-site" : {
+                "hadoop.proxyuser.hue.hosts" : "*",
+                "hadoop.proxyuser.hue.groups" : "*",
+                "hadoop.proxyuser.root.hosts" : "*",
+                "hadoop.proxyuser.root.groups" : "*"
+            }
+        },
+        {
+            "hdfs-site" : {
+                "dfs.block.size" : "34217472",
+                "dfs.replication" : "1",
+                "dfs.permissions.enabled" : "false",
+                "dfs.namenode.accesstime.precision" : "3600000",
+                "dfs.nfs3.dump.dir" : "/tmp/.hdfs-nfs",
+                "dfs.nfs.exports.allowed.hosts" : "* rw",
+                "dfs.datanode.max.xcievers" : "1024",
+                "dfs.block.access.token.enable" : "false"
+            }
+        },
+        {
+            "mapred-site" : {
+                "mapreduce.map.memory.mb" : "250",
+                "mapreduce.reduce.memory.mb" : "250",
+                "mapreduce.task.io.sort.mb" : "64",
+                "yarn.app.mapreduce.am.resource.mb" : "250",
+                "yarn.app.mapreduce.am.command-opts" : "-Xmx200m",
+                "mapred.job.reduce.memory.mb" : "250",
+                "mapred.child.java.opts" : "-Xmx200m",
+                "mapred.job.map.memory.mb" : "250",
+                "io.sort.mb" : "64",
+                "mapreduce.map.java.opts" : "-Xmx200m",
+                "mapreduce.reduce.java.opts" : "-Xmx200m"                
+            }
+        },
+        {
+            "yarn-site" : {
+                "yarn.nodemanager.resource.memory-mb": "2250",
+                "yarn.nodemanager.vmem-pmem-ratio" : "10",
+                "yarn.scheduler.minimum-allocation-mb" : "250",
+                "yarn.scheduler.maximum-allocation-mb" : "2250",
+                "yarn.nodemanager.pmem-check-enabled" : "false",
+                "yarn.acl.enable" : "false"
+            }
+        },
+        {
+            "capacity-scheduler" : {
+                "yarn.scheduler.capacity.root.default.maximum-am-resource-percent" :  "0.5",
+                "yarn.scheduler.capacity.maximum-am-resource-percent" : "0.5"
+            }
+        },
+        {
+            "hive-site" : {
+                "javax.jdo.option.ConnectionPassword" : "hive",
+                "javax.jdo.option.ConnectionUserName" : "hive",
+                "javax.jdo.option.ConnectionDriverName" : "com.mysql.jdbc.Driver",
+                "javax.jdo.option.ConnectionURL" : "jdbc:mysql://sandbox.hortonworks.com/hive?createDatabaseIfNotExist=true",
+                "javax.jdo.connection.url" : "jdbc:mysql://sandbox.hortonworks.com/hive?createDatabaseIfNotExist=true",
+                "hive.tez.container.size" : "250",
+                "hive.tez.java.opts" : "-server -Xmx200m -Djava.net.preferIPv4Stack=true",
+                "ambari.hive.db.schema.name": "hive"
+            }
+        },
+        {
+            "storm-site" : {
+                "logviewer.port" : "8005",
+                "nimbus.childopts" : "-Xmx200m -Djava.security.auth.login.config=/etc/storm/storm_jaas.conf -javaagent:/usr/lib/storm/contrib/storm-jmxetric/lib/jmxetric-1.0.4.jar=host=sandbox.hortonworks.com,port=8649,wireformat31x=true,mode=multicast,config=/usr/lib/storm/contrib/storm-jmxetric/conf/jmxetric-conf.xml,process=Nimbus_JVM",
+                "ui.childopts" : "-Xmx200m -Djava.security.auth.login.config=/etc/storm/storm_jaas.conf",
+                "drpc.childopts" : "-Xmx200m",
+                "worker.childopts" : "-Xmx200m -javaagent:/usr/lib/storm/contrib/storm-jmxetric/lib/jmxetric-1.0.4.jar=host=sandbox.hortonworks.com,port=8650,wireformat31x=true,mode=multicast,config=/usr/lib/storm/contrib/storm-jmxetric/conf/jmxetric-conf.xml,process=Worker_%ID%_JVM"                
+            }
+        },
+        {
+            "oozie-site" : {
+                "oozie.service.ProxyUserService.proxyuser.hue.hosts" : "*",
+                "oozie.service.ProxyUserService.proxyuser.hue.groups" : "*"
+            }
+        },
+        {
+            "webhcat-site" : {
+                "webhcat.proxyuser.hue.hosts" : "*",
+                "webhcat.proxyuser.hue.groups" : "*"
+            }
+        },
+        {
+            "tez-site" : {
+                "tez.am.java.opts" : "-server -Xmx200m -Djava.net.preferIPv4Stack=true -XX:+UseNUMA -XX:+UseParallelGC",
+                "tez.am.resource.memory.mb" : "250",
+                "tez.dag.am.resource.memory.mb" : "250",
+                "yarn.app.mapreduce.am.command-opts" : "-Xmx200m"                
+            }
+        }
+    ],
+    "host_groups" : [
+        {
+            "name" : "host_group_1",
+            "components" : [
+                {"name" : "DATANODE"},
+                {"name" : "DRPC_SERVER"},
+                {"name" : "FALCON_CLIENT"},
+                {"name" : "FALCON_SERVER"},
+                {"name" : "GANGLIA_SERVER"},
+                {"name" : "HBASE_CLIENT"},
+                {"name" : "HBASE_MASTER"},
+                {"name" : "HBASE_REGIONSERVER"},
+                {"name" : "HDFS_CLIENT"},
+                {"name" : "HISTORYSERVER"},
+                {"name" : "HIVE_CLIENT"},
+                {"name" : "HIVE_METASTORE"},
+                {"name" : "HIVE_SERVER"},
+                {"name" : "MAPREDUCE2_CLIENT"},
+                {"name" : "MYSQL_SERVER"},
+                {"name" : "NAGIOS_SERVER"},
+                {"name" : "NAMENODE"},
+                {"name" : "NIMBUS"},
+                {"name" : "NODEMANAGER"},
+                {"name" : "OOZIE_SERVER"},
+                {"name" : "PIG"},
+                {"name" : "RESOURCEMANAGER"},
+                {"name" : "SECONDARY_NAMENODE"},       
+                {"name" : "SQOOP"},
+                {"name" : "STORM_REST_API"},
+                {"name" : "STORM_UI_SERVER"},
+                {"name" : "SUPERVISOR"},
+                {"name" : "TEZ_CLIENT"},
+                {"name" : "WEBHCAT_SERVER"},
+                {"name" : "YARN_CLIENT"},
+                {"name" : "ZOOKEEPER_CLIENT"},
+                {"name" : "ZOOKEEPER_SERVER"}
+            ],
+            "cardinality" : "1"
+        }
+    ],
+    "Blueprints" : {
+        "blueprint_name" : "sandbox",
+        "stack_name" : "HDP",
+        "stack_version" : "2.1"
+    }
+}

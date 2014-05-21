@@ -1,0 +1,5 @@
+192.168.1.1     sandbox.hortonworks.com
+192.168.1.1     ambari.hortonworks.com
+192.168.1.2     host2.hortonworks.com
+192.168.1.3     host3.hortonworks.com
+

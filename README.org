@@ -1,0 +1,38 @@
+* Big data toolbox.
+
+** what's inside:
+
+- 3 nodes [[http://hortonworks.com/hdp/][hdp cluster]], based on [[https://www.docker.io/][docker]] containers installed with ambari bluprints:
+  + Apache Ambari
+  + Apache Hadoop
+  + Apache Storm
+  + Apache Falcon
+  + Apache Hive
+  + Apache Pig
+  + Apache Oozie
+  + Apache HBase
+  + Apache Tez
+  
+- Other software:
+  + Apache Spark
+  + Hue
+  + Apache Accumulo
+
+* How to use:
+1. Install [[https://www.virtualbox.org/][virtualbox]]
+2. Install [[http://www.vagrantup.com/][vagrant]]
+#+BEGIN_EXAMPLE
+$ git clone https://github.com/petro-rudenko/bigdata-toolbox
+$ cd bigdata-toolbox
+$ vagrant up
+#+END_EXAMPLE
+
+* How to customize:
+Edit puppet/modules/install/files/3-nodes-bluprint-cluster.json
+
+* How to add custom software:
+
+
+* TODO:
+1. Migrate from puppet.
+

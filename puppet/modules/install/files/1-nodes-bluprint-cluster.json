@@ -1,0 +1,13 @@
+{
+  "blueprint" : "sandbox",
+  "host_groups" :[
+    {
+      "name" : "host_group_1",
+      "hosts" : [
+        {
+          "fqdn" : "sandbox.hortonworks.com"
+        }
+      ]
+    }
+  ]
+}
