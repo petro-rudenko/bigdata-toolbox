@@ -116,14 +116,15 @@
                 {"name" : "FALCON_CLIENT"},
                 {"name" : "FALCON_SERVER"},
                 {"name" : "GANGLIA_SERVER"},
+                {"name" : "GLUSTERFS_CLIENT"},
+                {"name" : "HIVE_CLIENT"},
+                {"name" : "HIVE_METASTORE"},
+                {"name" : "HIVE_SERVER"},
                 {"name" : "HBASE_CLIENT"},
                 {"name" : "HBASE_MASTER"},
                 {"name" : "HBASE_REGIONSERVER"},
                 {"name" : "HDFS_CLIENT"},
                 {"name" : "HISTORYSERVER"},
-                {"name" : "HIVE_CLIENT"},
-                {"name" : "HIVE_METASTORE"},
-                {"name" : "HIVE_SERVER"},
                 {"name" : "MAPREDUCE2_CLIENT"},
                 {"name" : "MYSQL_SERVER"},
                 {"name" : "NAGIOS_SERVER"},
@@ -150,10 +151,11 @@
             "components" : [
                 {"name" : "DATANODE"},
                 {"name" : "FALCON_CLIENT"},
+                {"name" : "GLUSTERFS_CLIENT"},
+                {"name" : "HIVE_CLIENT"},
                 {"name" : "HBASE_CLIENT"},
                 {"name" : "HBASE_REGIONSERVER"},
                 {"name" : "HDFS_CLIENT"},
-                {"name" : "HIVE_CLIENT"},
                 {"name" : "MAPREDUCE2_CLIENT"},
                 {"name" : "NODEMANAGER"},
                 {"name" : "PIG"},
@@ -171,10 +173,11 @@
             "components" : [
                 {"name" : "DATANODE"},
                 {"name" : "FALCON_CLIENT"},
+                {"name" : "GLUSTERFS_CLIENT"},
+                {"name" : "HIVE_CLIENT"},
                 {"name" : "HBASE_CLIENT"},
                 {"name" : "HBASE_REGIONSERVER"},
                 {"name" : "HDFS_CLIENT"},
-                {"name" : "HIVE_CLIENT"},
                 {"name" : "MAPREDUCE2_CLIENT"},
                 {"name" : "NODEMANAGER"},
                 {"name" : "PIG"},
@@ -190,6 +193,6 @@
     "Blueprints" : {
         "blueprint_name" : "sandbox",
         "stack_name" : "HDP",
-        "stack_version" : "2.1"
+        "stack_version" : "2.1.GlusterFS"
     }
 }

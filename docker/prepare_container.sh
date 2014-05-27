@@ -1,5 +1,5 @@
 yum update -y
-yum install -y openssh-server openssh-clients wget tar sudo perl ntp
+yum install -y openssh-server openssh-clients wget tar sudo perl ntp git
 sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 echo 'root:hadoop' | chpasswd 
@@ -19,5 +19,8 @@ rm -f ssh.tar.gz
 perl -pi -e 's:/etc/hosts:/tmp/hosts:g' /lib64/libnss_files.so.2
 rpm -ivh https://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
 yum install -y puppet
+cd /tmp
+git clone https://github.com/petro-rudenko/bigdata-toolbox.git
+ln -s bigdata-toolbox/puppet .
 #chconfig ip6tables off
 #cd ../; rm -rf /tmp/*;

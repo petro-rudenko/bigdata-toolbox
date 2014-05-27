@@ -11,8 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "chef/ubuntu-14.04"
-  config.vm.post_up_message = "Congratulation! 3 nodes docker cluster is ready. 
-  Now you can login to ambari: http://127.0.0.1:8080 or hue http://127.0.0.1:8000 or ssh to gateway node: ssh root@127.0.0.1 -p 2223 (password: hadoop)"
+  config.vm.post_up_message = "Congratulation! 3 nodes docker cluster is ready. Now you can login to ambari: http://127.0.0.1:8080 or hue http://127.0.0.1:8000"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -24,7 +23,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 80, host: 42080, host_ip: "127.0.0.1", auto_correct: true #Apache http
   config.vm.network :forwarded_port, guest: 111, host: 42111, host_ip: "127.0.0.1", auto_correct: true #NFS portmap
-  config.vm.network :forwarded_port, guest: 2223, host: 2223, host_ip: "127.0.0.1", auto_correct: true #Gateway node
   config.vm.network :forwarded_port, guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true #Hue
   config.vm.network :forwarded_port, guest: 8020, host: 8020, host_ip: "127.0.0.1", auto_correct: true #Hdfs
   config.vm.network :forwarded_port, guest: 8042, host: 8042, host_ip: "127.0.0.1", auto_correct: true #NodeManager
@@ -92,7 +90,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   #
 
-  config.vm.provision "shell", path: "prepare.sh"
+ config.vm.provision "shell", path: "prepare.sh"
   
   
   # View the documentation for the provider you're using for more

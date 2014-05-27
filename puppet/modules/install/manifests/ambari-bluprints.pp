@@ -1,8 +1,15 @@
 class install::ambari-bluprints{
 
   if $nodecount==3{
-    file{"/tmp/install/bluprint.json":
-      source => "puppet:///modules/install/bluprint-3-nodes.json"
+    if $stack == 'gluster' {
+      file{"/tmp/install/bluprint.json":
+        source => "puppet:///modules/install/bluprint-gluster-3-nodes.json"
+      }
+    }
+    else {
+      file{"/tmp/install/bluprint.json":
+        source => "puppet:///modules/install/bluprint-3-nodes.json"
+      }
     }
     file{"/tmp/install/cluster.json":
       source => "puppet:///modules/install/3-nodes-bluprint-cluster.json"
