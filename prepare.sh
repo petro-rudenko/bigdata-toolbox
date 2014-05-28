@@ -1,5 +1,5 @@
 apt-get -y update;
-apt-get install -y vim wget curl docker.io bridge-utils arping;
+apt-get install -y vim wget curl docker.io bridge-utils arping python-software-properties 
 echo "limit nofile 65536 65536" >> /etc/init/docker.io.conf
 echo "limit nproc unlimited unlimited" >> /etc/init/docker.io.conf
 service docker.io restart
@@ -17,7 +17,7 @@ chmod 700 .ssh
 echo 'nameserver 8.8.8.8' > /etc/resolv.conf
 #docker.io build --rm=true -t ambari/common .
 docker.io pull prudenko/ambari
-docker.io run -d --name ambari -P -h ambari.hortonworks.com prudenko/ambari
+docker.io run -d --name ambari -p 8080:8080 -p 8000:8000 -p 8088:8088 -p 2223:22 -h ambari.hortonworks.com prudenko/ambari
 sleep 5;      
 pipework br1 ambari 192.168.1.1/24;
 ip addr add 192.168.1.254/24 dev br1
