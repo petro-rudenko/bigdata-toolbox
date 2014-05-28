@@ -24,7 +24,7 @@ ip addr add 192.168.1.254/24 dev br1
 command="cd /tmp/bigdata-toolbox && git pull; \
 export FACTER_nodecount=3 && \
 export FACTER_stack=gluster && \
-puppet apply --verbose --modulepath=\"/tmp/puppet/modules\" --detailed-exitcodes /tmp/puppet/manifests/init.pp"
+puppet apply --verbose --debug --modulepath=\"/tmp/puppet/modules\" --detailed-exitcodes /tmp/puppet/manifests/init.pp"
 
 
 for i in `seq 2 3`
