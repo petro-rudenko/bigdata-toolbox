@@ -32,8 +32,9 @@ do
     name="host$i"
     docker.io run -d --name $name -h $name.hortonworks.com prudenko/ambari
     pipework br1 $name 192.168.1.$i/24
-    ssh -oStrictHostKeyChecking=no root@192.168.1.$i echo 'export FACTER_role=slaves &&' $command > /var/log/host$i.log &
+    com1='export FACTER_role=slaves && '$command
+    ssh -oStrictHostKeyChecking=no root@192.168.1.$i $com1 > /var/log/host$i.log &
 done
 
-
-ssh -oStrictHostKeyChecking=no root@192.168.1.1 echo 'export FACTER_role=ambari &&' $command
+com2='export FACTER_role=ambari && '$command
+ssh -oStrictHostKeyChecking=no root@192.168.1.1  $com2
