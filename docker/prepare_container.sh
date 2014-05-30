@@ -1,5 +1,5 @@
 yum update -y
-yum install -y openssh-server openssh-clients wget tar sudo perl ntp git
+yum install -y openssh-server openssh-clients wget tar sudo perl ntp git redhat-lsb
 sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 echo 'root:hadoop' | chpasswd 

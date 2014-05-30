@@ -3,7 +3,7 @@ class install::ambari-bluprints{
   if $nodecount==3{
     if $stack == 'gluster' {
       exec{"register correct stack":
-        command => "curl -f -H 'X-Requested-By: ambari' -u admin:admin  -X PUT -d @/tmp/puppet/modules/install/files/2.1.repo.json 'http://ambari.hortonworks.com:8080/api/v1/stacks/HDP/versions/2.1.GlusterFS/operating_systems/centos6/repositories/HDP-2.1.GlusterFS'",
+        command => "curl -f -H 'X-Requested-By: ambari' -u admin:admin  -X PUT -d @/tmp/puppet/modules/install/files/2.1.repo.json 'http://ambari.hortonworks.com:8080/api/v1/stacks/HDP/versions/2.1.GlusterFS/operating_systems/centos6/repositories/HDP-2.1.GlusterFS' && wget -O /etc/yum.repos.d/hdp-util.repo http://public-repo-1.hortonworks.com.s3.amazonaws.com/HDP-UTILS-1.1.0.17/repos/centos6/hdp-util.repo",
         require => Class["install::ambari-server"]
       }      
       file{"/tmp/install/bluprint.json":
