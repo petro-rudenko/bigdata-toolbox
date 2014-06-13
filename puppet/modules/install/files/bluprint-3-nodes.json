@@ -1,5 +1,4 @@
 {
-    "default_password": "hadoop",
     "configurations" : [
         {
             "global" : {
@@ -159,7 +158,6 @@
                 {"name" : "HIVE_CLIENT"},
                 {"name" : "MAPREDUCE2_CLIENT"},
                 {"name" : "NODEMANAGER"},
-                {"name" : "OOZIE_CLIENT"},
                 {"name" : "PIG"},
                 {"name" : "SECONDARY_NAMENODE"},       
                 {"name" : "SQOOP"},
