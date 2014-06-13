@@ -92,7 +92,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   #
 
- config.vm.provision "shell", path: "prepare.sh"
+  config.vm.provision "shell" do |s|
+    s.path = "prepare.sh"
+    #s.args   = ["gluster"]  #Stack HDP/gluster
+  end
   
   
   # View the documentation for the provider you're using for more

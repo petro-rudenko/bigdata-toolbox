@@ -5,8 +5,8 @@
 - 3 nodes [[http://hortonworks.com/hdp/][hdp cluster]], based on [[https://www.docker.io/][docker]] containers installed with ambari bluprints:
   + Apache Ambari
   + Apache Falcon
-  + Apache HBase
   + Apache Hadoop
+  + Apache HBase
   + Apache Hive
   + Apache Oozie
   + Apache Pig
@@ -16,9 +16,8 @@
 - Other software:
   + Apache Accumulo
   + Apache Spark
-  + Hue
   + Gluster FS
-
+  + Hue
 
 * How to use:
 1. Install [[https://www.virtualbox.org/][virtualbox]]
@@ -28,7 +27,6 @@ $ git clone https://github.com/petro-rudenko/bigdata-toolbox
 $ cd bigdata-toolbox
 $ vagrant up
 #+END_EXAMPLE
-
 
 * How to customize:
 Edit puppet/modules/install/files/3-nodes-bluprint-cluster.json
@@ -40,3 +38,5 @@ Edit puppet/modules/install/files/3-nodes-bluprint-cluster.json
 1. Migrate from puppet to master-client (probably salt) in order to sync install 3-party software on nodes. 
 2. Cloud deployment
 3. Save states of containers to not rebuild whole system.
+4. Configurable nodes count and custom bluprints.
+5. Move to [[http://blog.sequenceiq.com/blog/2014/05/26/ambari-shell/][ambari shell]].

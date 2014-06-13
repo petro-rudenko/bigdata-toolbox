@@ -1,4 +1,5 @@
 {
+    "default_password": "hadoop",
     "configurations" : [
         {
             "global" : {
@@ -111,6 +112,7 @@
         {
             "name" : "master",
             "components" : [
+                {"name": "APP_TIMELINE_SERVER"},
                 {"name" : "DATANODE"},
                 {"name" : "DRPC_SERVER"},
                 {"name" : "FALCON_CLIENT"},
@@ -131,6 +133,7 @@
                 {"name" : "NIMBUS"},
                 {"name" : "NODEMANAGER"},
                 {"name" : "OOZIE_SERVER"},
+                {"name" : "OOZIE_CLIENT"},
                 {"name" : "PIG"},
                 {"name" : "RESOURCEMANAGER"},
                 {"name" : "SQOOP"},
@@ -156,13 +159,13 @@
                 {"name" : "HIVE_CLIENT"},
                 {"name" : "MAPREDUCE2_CLIENT"},
                 {"name" : "NODEMANAGER"},
+                {"name" : "OOZIE_CLIENT"},
                 {"name" : "PIG"},
                 {"name" : "SECONDARY_NAMENODE"},       
                 {"name" : "SQOOP"},
                 {"name" : "TEZ_CLIENT"},
                 {"name" : "YARN_CLIENT"},
-                {"name" : "ZOOKEEPER_CLIENT"},
-                {"name" : "ZOOKEEPER_SERVER"}
+                {"name" : "ZOOKEEPER_CLIENT"}
             ],
             "cardinality" : "1"
         },
@@ -181,8 +184,7 @@
                 {"name" : "SQOOP"},
                 {"name" : "TEZ_CLIENT"},
                 {"name" : "YARN_CLIENT"},
-                {"name" : "ZOOKEEPER_CLIENT"},
-                {"name" : "ZOOKEEPER_SERVER"}
+                {"name" : "ZOOKEEPER_CLIENT"}
             ],
             "cardinality" : "1"
         }

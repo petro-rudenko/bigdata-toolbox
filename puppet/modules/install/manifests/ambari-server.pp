@@ -12,10 +12,14 @@ class install::ambari-server{
     require => [Package["ambari-server"], Class["prepare"]]
   }
 
+  file{"/var/lib/ambari-server/resources/stacks/HDP/2.1.GlusterFS/role_command_order.json":
+    source => "puppet:///modules/install/role_command_order.json"
+  }
+
 
   exec {"ambari-server start":
     command => "ambari-server start",
-    require => Exec["ambari-server setup"]
+    require => [Exec["ambari-server setup"],File["/var/lib/ambari-server/resources/stacks/HDP/2.1.GlusterFS/role_command_order.json"]]
   }
 
   
