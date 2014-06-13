@@ -17,4 +17,4 @@ chmod 700 .ssh
 echo 'nameserver 8.8.8.8' > /etc/resolv.conf
 #docker.io build --rm=true -t ambari/common .
 docker.io pull prudenko/ambari
-./start.sh $1
+bash /vagrant/start.sh $1

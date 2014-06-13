@@ -13,11 +13,10 @@ class install::ambari-server{
   }
 
   
-  if $stack == 'gluster' {
-    file{"/var/lib/ambari-server/resources/stacks/HDP/2.1.GlusterFS/role_command_order.json":
-      source => "puppet:///modules/install/role_command_order.json",
-      ensure  => present
-    }
+  file{"/var/lib/ambari-server/resources/stacks/HDP/2.1.GlusterFS/role_command_order.json":
+    source => "puppet:///modules/install/role_command_order.json",
+    ensure  => present,
+    owner => 'root'
   }
 
 
