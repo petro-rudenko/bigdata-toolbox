@@ -6,7 +6,7 @@ for task in tasks:
     if status == "IN_PROGRESS":
         sys.stdout.write("Executing task %s\n" % task["Tasks"]["command_detail"])
         sys.stdout.flush()
-    if status == "FAILED":
+    if status == "FAILED" or status == "ABORTED":
         sys.stderr.write("Task %s failed: %s\n" % (task["Tasks"]["command_detail"], task["Tasks"]["stderr"]))
         sys.stderr.flush()
         sys.exit(2)
