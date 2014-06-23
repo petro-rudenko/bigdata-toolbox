@@ -74,7 +74,11 @@
             "hive-site" : {
                 "javax.jdo.option.ConnectionPassword" : "hive",
                 "hive.tez.container.size" : "250",
-                "hive.tez.java.opts" : "-server -Xmx200m -Djava.net.preferIPv4Stack=true"
+                "hive.tez.java.opts" : "-server -Xmx200m -Djava.net.preferIPv4Stack=true",
+                "hive.heapsize" : "250",
+                "hive.server2.enable.impersonation": "true",
+                "hive.server2.enable.doAs": "true",
+                "hive.server2.authentication": "NOSASL"
             }
         },
         {

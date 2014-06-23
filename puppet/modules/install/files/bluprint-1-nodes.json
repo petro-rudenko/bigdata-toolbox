@@ -9,10 +9,6 @@
                 "dtnode_heapsize" : "250",
                 "hadoop_heapsize" : "250",
                 "namenode_heapsize" : "250",
-                "hive_ambari_database": "MySQL",
-                "hive_database" : "New MySQL Database",
-                "hive_database_type" : "mysql",
-                "hive_hostname" : "sandbox.hortonworks.com",
                 "hive_metastore_user_passwd" : "hive",
                 "hbase_master_heapsize": "250",
                 "hbase_regionserver_heapsize": "250",
@@ -78,13 +74,12 @@
         {
             "hive-site" : {
                 "javax.jdo.option.ConnectionPassword" : "hive",
-                "javax.jdo.option.ConnectionUserName" : "hive",
-                "javax.jdo.option.ConnectionDriverName" : "com.mysql.jdbc.Driver",
-                "javax.jdo.option.ConnectionURL" : "jdbc:mysql://sandbox.hortonworks.com/hive?createDatabaseIfNotExist=true",
-                "javax.jdo.connection.url" : "jdbc:mysql://sandbox.hortonworks.com/hive?createDatabaseIfNotExist=true",
                 "hive.tez.container.size" : "250",
                 "hive.tez.java.opts" : "-server -Xmx200m -Djava.net.preferIPv4Stack=true",
-                "ambari.hive.db.schema.name": "hive"
+                "hive.heapsize" : "250",
+                "hive.server2.enable.impersonation": "true",
+                "hive.server2.enable.doAs": "true",
+                "hive.server2.authentication": "NOSASL"
             }
         },
         {
@@ -121,6 +116,7 @@
         {
             "name" : "host_group_1",
             "components" : [
+                {"name": "APP_TIMELINE_SERVER"},
                 {"name" : "DATANODE"},
                 {"name" : "DRPC_SERVER"},
                 {"name" : "FALCON_CLIENT"},
@@ -141,6 +137,7 @@
                 {"name" : "NIMBUS"},
                 {"name" : "NODEMANAGER"},
                 {"name" : "OOZIE_SERVER"},
+                {"name" : "OOZIE_CLIENT"},
                 {"name" : "PIG"},
                 {"name" : "RESOURCEMANAGER"},
                 {"name" : "SECONDARY_NAMENODE"},       

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker kill `docker ps|awk '{if ($1 != "CONTAINER"){print $1}}'`
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
